@@ -122,6 +122,7 @@ def select_category():
 def select_channel():
     selected_category = request.forms.getunicode('category')
     html = ""
+    html = html + "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
     html = html + style
     html = html + "<form action=\"/time\" method=\"post\"> \n"
     html = html + "\t<select name=\"channel\"  id=\"soflow\">\n"
@@ -144,6 +145,7 @@ def select_time():
     global url_to_record
     url_to_record = urls[selected_channel]
     html = ""
+    html = html + "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
     html = html + style
     html = html + "<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\">"
     html = html + "<form action=\"/record\" method=\"post\" class=\"w3-container\">  \n"
