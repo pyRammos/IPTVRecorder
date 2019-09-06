@@ -221,7 +221,8 @@ def recordVideo(title, duration, url):
     today = today + "-" + now.strftime('%a')
     streamName = title
     stream = url_to_record
-    filename = streamName + today + ".mp4"
+    filename = outputDir+ "/" + today + ".mp4"
+    print ("Will record to " + filename)
    # parameters = "sout=#transcode{vcodec=h264,acodec=mp4a,ab=128,channels=2,deinterlace,threads=4,vb=2000,venc=x264}:duplicate{dst=std{access=file,mux=mp4,dst='"+filename+"'"
     parameters = "sout=#transcode{vcodec=h264,acodec=mp4a,ab=128,channels=2,venc=x264}:duplicate{dst=std{access=file,mux=mp4,dst='"+filename+"'"
 
@@ -254,6 +255,7 @@ def recordVideo(title, duration, url):
 config = configparser.ConfigParser()
 config.read('settings.cfg')
 playlist = str(config['DEFAULT']['playlist'])
+outputDir = str(config['DEFAULT']['outputDir'])
 loadlist()
 
 run(app, host='localhost', port=8080)
