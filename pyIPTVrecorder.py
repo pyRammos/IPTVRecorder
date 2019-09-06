@@ -4,6 +4,8 @@ import urllib.request
 import urllib
 import datetime
 import configparser
+import os
+import sys
 
 # Import Variables
 playlist = ""
@@ -254,8 +256,16 @@ def recordVideo(title, duration, url):
             debug("OK. We are done recording")
             exit(0)
 
-config = configparser.ConfigParser()
-config.read('settings.cfg')
+try:
+    pathname = os.path.abspath(os.path.dirname(sys.argv[0]))
+    config = configparser.ConfigParser()
+    config.read(pathname + "/settings.cfg")
+    config = configparser.ConfigParser()
+    config.read('settings.cfg')
+except Exception:
+    print("Unable to load values from the config file. Check the file exists in the same directory as the script and it has the right format and values")
+    exit(10)
+
 playlist = str(config['DEFAULT']['playlist'])
 outputDir = str(config['DEFAULT']['outputDir'])
 loadlist()
