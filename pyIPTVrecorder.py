@@ -115,7 +115,7 @@ def select_category():
     for elements in unique_groups:
         html = html + "\t\t<option value = \"" + str(elements) + "\">" + str(elements) + "</option>\n"
     html = html + "\t</select>\n <br> \n"
-    html = html + "\t<input type=\"submit\" class = \"button\" value=\"Pick Category\">\n"
+    html = html + "\t<input type=\"submit\" value=\"Pick Category\">\n"
     html = html + "</form>"
     return html
 @app.post('/channel')
