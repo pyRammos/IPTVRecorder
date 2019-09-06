@@ -126,7 +126,7 @@ def select_channel():
     html = html + "\t<select name=\"channel\"  id=\"soflow\">\n"
     counter = 0
     for elements in groups:
-        print ("For channel [" + channels[counter] +" - Testing " + elements + " vs. " + selected_category + " and it is " + str(elements==selected_category))
+        # print ("For channel [" + channels[counter] +" - Testing " + elements + " vs. " + selected_category + " and it is " + str(elements==selected_category))
         if (elements==selected_category):
             html = html + "\t\t<option value = \"" + str(counter) + "\">" + str(channels[counter]) + "</option>\n"
         counter=counter + 1
@@ -190,18 +190,18 @@ def loadlist():
             group_tag_position = line.find("group-title")
             group_start = line.find("\"",group_tag_position)+1
             group_end = line.find("\"", group_start)
-            print(line)
+            # print(line)
             temp_channel = line[name_start:name_end]
             temp_group = line[group_start:group_end]
             channels.append(temp_channel)
             groups.append(temp_group)
             if temp_group not in unique_groups:
                 unique_groups.append(temp_group)
-            print ( temp_channel+ " in category " + temp_group )
+            # print ( temp_channel+ " in category " + temp_group )
 
         if (line[:4] == "http"):
             urls.append(line)
-            print ("Name = " + channels[temp] + " link=" + urls[temp])
+            # print ("Name = " + channels[temp] + " link=" + urls[temp])
             temp=temp+1
         #print (temp)
         #if (temp>10):
