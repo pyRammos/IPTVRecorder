@@ -257,17 +257,17 @@ def recordVideo(title, duration, url):
             exit(0)
 
 try:
-    pathname = os.path.abspath(os.path.dirname(sys.argv[0]))
-    print ("Will read from " + pathname + "/settings.cfg")
+    settingsFile = os.path.abspath(os.path.dirname(sys.argv[0])) + "/settings.cfg"
+    print ("Will read from " + settingsFile)
     config = configparser.ConfigParser()
-    config.read(pathname + "/settings.cfg")
-    config = configparser.ConfigParser()
+    config.read(settingsFile)
+    playlist = str(config['DEFAULT']['playlist'])
+    outputDir = str(config['DEFAULT']['outputDir'])
 except Exception:
     print("Unable to load values from the config file. Check the file exists in the same directory as the script and it has the right format and values")
     exit(10)
 
-playlist = str(config['DEFAULT']['playlist'])
-outputDir = str(config['DEFAULT']['outputDir'])
+
 loadlist()
 
 run(app, host='localhost', port=8080)
