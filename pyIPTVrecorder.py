@@ -108,6 +108,7 @@ def send_static(filename):
 @app.get('/')
 def select_category():
     html = ""
+    html = html + "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
     html = html + style
     html = html + "<form accept-charset=\"UTF-8\" action=\"/channel\" method=\"post\"> \n"
     html = html + "\t<select name=\"category\" id=\"soflow\">\n"
