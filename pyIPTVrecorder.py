@@ -261,7 +261,6 @@ try:
     config = configparser.ConfigParser()
     config.read(pathname + "/settings.cfg")
     config = configparser.ConfigParser()
-    config.read('settings.cfg')
 except Exception:
     print("Unable to load values from the config file. Check the file exists in the same directory as the script and it has the right format and values")
     exit(10)
