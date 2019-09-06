@@ -110,7 +110,7 @@ def select_category():
     html = ""
     html = html + "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
     html = html + style
-    html = html + "<form accept-charset=\"UTF-8\" action=\"/channel\" method=\"post\"> \n"
+    html = html + "<form accept-charset=\"UTF-8\" action=\"/channel\" method=\"post\" class=\"w3-container\"> \n"
     html = html + "\t<select name=\"category\" id=\"soflow\">\n"
     for elements in unique_groups:
         html = html + "\t\t<option value = \"" + str(elements) + "\">" + str(elements) + "</option>\n"
@@ -124,7 +124,7 @@ def select_channel():
     html = ""
     html = html + "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
     html = html + style
-    html = html + "<form action=\"/time\" method=\"post\"> \n"
+    html = html + "<form action=\"/time\" method=\"post\" class=\"w3-container\"> \n"
     html = html + "\t<select name=\"channel\"  id=\"soflow\">\n"
     counter = 0
     for elements in groups:
