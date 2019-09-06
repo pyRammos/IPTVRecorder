@@ -1,0 +1,3 @@
+[DEFAULT]
+playlist = http://playlist
+outputDir = ""
