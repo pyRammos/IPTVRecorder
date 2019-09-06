@@ -258,6 +258,7 @@ def recordVideo(title, duration, url):
 
 try:
     pathname = os.path.abspath(os.path.dirname(sys.argv[0]))
+    print ("Will read from " + pathname + "/settings.cfg")
     config = configparser.ConfigParser()
     config.read(pathname + "/settings.cfg")
     config = configparser.ConfigParser()
