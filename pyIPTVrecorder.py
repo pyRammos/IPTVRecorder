@@ -178,7 +178,7 @@ def record():
         duration) + " minutes")
 
 def loadlist():
-    print ("Debug : Downloading playlist")
+    print ("Debug : Downloading playlist from " + playlist)
     req = urllib.request.Request(playlist, headers=hdr)
     response= urllib.request.urlopen(req)
     print("Debug : Openned URL")
@@ -266,7 +266,6 @@ try:
 except Exception:
     print("Unable to load values from the config file. Check the file exists in the same directory as the script and it has the right format and values")
     exit(10)
-
 
 loadlist()
 
