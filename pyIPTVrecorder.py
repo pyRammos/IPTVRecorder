@@ -6,6 +6,7 @@ import datetime
 import configparser
 import os
 import sys
+import time
 
 # Import Variables
 playlist = ""
@@ -267,6 +268,8 @@ except Exception:
     print("Unable to load values from the config file. Check the file exists in the same directory as the script and it has the right format and values")
     exit(10)
 
+debug ("Will pause for 30 seconds in case this is a cron startup to allow network to load")
+time.sleep(30)
 loadlist()
 
 run(app, host='localhost', port=8080)
