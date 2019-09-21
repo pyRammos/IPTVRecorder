@@ -35,6 +35,19 @@ input[type=text] {
   box-sizing: border-box;
 }
 
+a:link, a:visited {
+  background-color: orange;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: orange;
+}
+
 input [type=button], input[type=submit], input[type=reset] {
   background-color: #4CAF50;
   border: none;
@@ -57,7 +70,6 @@ select {
 }
 
 .styled-select {
-   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
    height: 29px;
    overflow: hidden;
    width: 240px;
@@ -70,7 +82,6 @@ select#soflow, select#soflow-color {
    -webkit-padding-end: 20px;
    -webkit-padding-start: 2px;
    -webkit-user-select: none;
-   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
    background-position: 97% center;
    background-repeat: no-repeat;
    border: 1px solid #AAA;
@@ -153,6 +164,7 @@ def select_time():
     html = html + "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
     html = html + style
     html = html + "<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\">"
+    html = html + "<p> </br>" + "<a href=\""+ url_to_record + "\" target=\"_blank\"> Play " + channel_to_record +"</a> </br></p>"
     html = html + "<form action=\"/record\" method=\"post\" class=\"w3-container\">  \n"
     html = html + "\t<p> \n"
     html = html + "\t\t<label for=\"title\">Title</label> \n \t\t <br>"
