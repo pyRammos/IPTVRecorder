@@ -282,7 +282,7 @@ except Exception:
     exit(10)
 
 debug ("Will pause for 30 seconds in case this is a cron startup to allow network to load")
-time.sleep(1)
+time.sleep(30)
 loadlist()
 
 run(app, host='localhost', port=8080)
