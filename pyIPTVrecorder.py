@@ -203,9 +203,10 @@ def loadlist():
     for line in file:
         if (line[:7] == "#EXTINF"):
 
-            name_tag_position = line.find("tvg-name")
-            name_start = line.find("\"",name_tag_position)+1
-            name_end = line.find("\"", name_start)
+            name_tag_position = line.find(",")
+            #name_start = line.find("\"",name_tag_position)+1
+            name_start = name_tag_position + 1
+            name_end = len(line)
 
             group_tag_position = line.find("group-title")
             group_start = line.find("\"",group_tag_position)+1
@@ -281,7 +282,7 @@ except Exception:
     exit(10)
 
 debug ("Will pause for 30 seconds in case this is a cron startup to allow network to load")
-time.sleep(30)
+time.sleep(1)
 loadlist()
 
 run(app, host='localhost', port=8080)
