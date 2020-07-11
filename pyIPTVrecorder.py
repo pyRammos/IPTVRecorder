@@ -243,7 +243,7 @@ def recordVideo(title, duration, url):
     print ("Will record to " + filename)
    # parameters = "sout=#transcode{vcodec=h264,acodec=mp4a,ab=128,channels=2,deinterlace,threads=4,vb=2000,venc=x264}:duplicate{dst=std{access=file,mux=mp4,dst='"+filename+"'"
     parameters = "sout=#transcode{vcodec=h264,acodec=mp4a,ab=128,channels=2,venc=x264}:duplicate{dst=std{access=file,mux=mp4,dst='"+filename+"'"
-
+    parameters = "sout=#duplicate{dst=std{access=file,mux=mp4,dst='"+filename+"'"
     caching_parameters = "--network-caching=5000"
     reconnect_parameters = "--http-reconnect"
     quiet_parameters = "--quiet"
